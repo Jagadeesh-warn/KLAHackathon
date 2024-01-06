@@ -72,6 +72,6 @@ for i in optimized_slots:
 final_slots = {"v0": {f"path{i + 1}": final_lst[i] for i in range(len(final_lst))}}
 print(final_slots)
 
-with open('level1.json', 'w') as file2:
+with open('level1_output.json', 'w') as file2:
     json.dump(final_slots, file2)
 
