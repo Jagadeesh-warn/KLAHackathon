@@ -17,15 +17,7 @@ for i in neighbourhood.keys():
 
 res_dist = data['restaurants']['r0']['neighbourhood_distance']
 
-#print("Distance to neighbourhood from restaurant r0:", res_dist)
-#print("Order_quantity for each area:", ord_quantity)
-
 max_cap = data['vehicles']['v0']['capacity']
-
-#print("Capacity of scooter:", max_cap)
-#print("Total quantity:", sum(ord_quantity))
-#print("Minimum number of slots:", round(sum(ord_quantity) / max_cap))
-
 
 def find_optimized_slots(distances, res_dist, ord_quantities, max_cap):
     node_order = sorted(range(len(res_dist)), key=lambda x: res_dist[x])
