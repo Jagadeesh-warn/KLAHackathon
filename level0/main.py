@@ -1,6 +1,7 @@
 import json
 from collections import deque
 
+
 file1 = open('C:\HackathoN\KLAHackathon\level0\level0.json')
 
 data = json.load(file1)
@@ -14,7 +15,7 @@ for i in data["neighbourhoods"]:
 print(list1)
 
 def travellingsalesman(c,cost,list2):
-    v=99999
+    v=0
     min=99999
     visited[c]=1
     list2.append("n%d"%(c-1))
@@ -25,7 +26,7 @@ def travellingsalesman(c,cost,list2):
                 v=k
     if min!=99999:
         cost+=min
-    if v==99999:
+    if v==0:
         list2.append("r0")
         cost+=list1[c][0]
         return
