@@ -11,7 +11,7 @@ length = data["n_neighbourhoods"]+len(data["restaurants"])
 list1.append([0]+data["restaurants"][data["vehicles"]["v0"]["start_point"]]["neighbourhood_distance"])
 for i in data["neighbourhoods"]:
     list1.append([0]+data["neighbourhoods"][i]["distances"])
-print(list1)
+#print(list1)
 
 def travellingsalesman(c,cost,list2):
     v=0
@@ -38,4 +38,30 @@ travellingsalesman(0,cost,list2)
     
 list2[0]="r0"
 output={"v0":{"path":list2}}
+
+with open('level1.json', 'w') as file2:
+    json.dump(output, file2)
+
+
+with open('level1.json', 'r') as file:
+    output_data = json.load(file)
+
+for key, value in output_data.items():
+    path = value["path"]
+    
+
+output_list = [value["path"] for key, value in output_data.items()]
+
+#print(output_list[0])
+list2 = []
+for i in data['neighbourhoods']:
+    list2.append(i)
+#print(list2)
+
+for i in output_list[0]:
+    for j in list2:
+        if i == j:
+            print(i)
+    
+
 
